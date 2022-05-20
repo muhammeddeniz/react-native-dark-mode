@@ -25,3 +25,11 @@
 
 ### Todo
 - [ ] Redux for in app theme changes
+
+
+## 📱 Video
+
+
+
+https://user-images.githubusercontent.com/47753807/169611818-62ef35c2-1cd0-46ed-9b6f-52398bb15af6.mp4
+

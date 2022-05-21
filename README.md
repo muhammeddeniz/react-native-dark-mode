@@ -24,7 +24,7 @@
 ```
 
 ### Todo
-- [ ] Redux for in app theme changes
+- [x] Redux for in app theme changes
 
 
 ## 📱 Video

@@ -1,18 +1,44 @@
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
 import React from "react";
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { useDispatch } from "react-redux";
+
 import { Theme } from "./theme";
 import MainWrapper from "./HOC/mainWrapper";
+import { changeTheme } from "./store/settings.slice";
 
 type Props = {
   styles: any;
 };
 
+const Button = ({ text, styles, onPress }) => {
+  return (
+    <TouchableOpacity onPress={() => onPress()}>
+      <Text style={styles.text}>{text}</Text>
+    </TouchableOpacity>
+  );
+};
+
 const App: React.FC<Props> = ({ styles }) => {
+  const dispatch = useDispatch();
+
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity>
-        <Text style={styles.text}>App</Text>
-      </TouchableOpacity>
+      <Button
+        text="Light"
+        styles={styles}
+        onPress={() => dispatch(changeTheme("light"))}
+      />
+      <Button
+        text="Dark"
+        styles={styles}
+        onPress={() => dispatch(changeTheme("dark"))}
+      />
+
+      <Button
+        text="System"
+        styles={styles}
+        onPress={() => dispatch(changeTheme("system"))}
+      />
     </SafeAreaView>
   );
 };

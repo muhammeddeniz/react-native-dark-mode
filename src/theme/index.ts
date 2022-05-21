@@ -4,7 +4,7 @@ export type Theme = {
   background: string;
 };
 
-type AllThemes = {
+export type AllThemes = {
   dark: Theme;
   light: Theme;
 };

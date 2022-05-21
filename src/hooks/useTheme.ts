@@ -1,10 +1,14 @@
 import { useColorScheme } from "react-native";
+import { useSelector } from "react-redux";
 import { themes } from "../theme";
 
 const useTheme = () => {
-  let colorScheme = useColorScheme();
+  const colorScheme = useColorScheme();
+  const { theme } = useSelector((state: any) => state.settingsReducer);
+  let colors;
 
-  const colors = themes[colorScheme];
+  if (theme === "system") colors = themes[colorScheme];
+  else colors = themes[theme];
 
   return colors;
 };
